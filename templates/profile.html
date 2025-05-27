@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color:rgb(246, 237, 152);
+        }
+        .container {
+            width: 50px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:rgb(246, 237, 152);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px solid white;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="file"] {
+            width: 50%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        div {
+            margin: 10px 0;
+    </style>
+</head>
+<body>
+    <h1>Profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{ user.username }}" readonly><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}"><br>
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" value="{{ user.full_name }}"><br>
+        <div>
+            <a href="{{ url_for('dashboard') }}" class="btn" style="color: white;">Go to Dashboard</a><br>
+        </div>
+    </form>
+</body>
+</html>
+

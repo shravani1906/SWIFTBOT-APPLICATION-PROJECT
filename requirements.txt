@@ -1,0 +1,10 @@
+flask
+mysql-connector-python
+werkzeug
+nltk
+mysql.connector
+mysql.connector.errors
+textblob
+pytz
+
+

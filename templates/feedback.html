@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Feedback</h1>
+    <ul>
+        {% for feedback in feedbacks %}
+            <li>{{ feedback.created_at }} - {{ feedback.username }}: {{ feedback.feedback }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+</body>
+</html>

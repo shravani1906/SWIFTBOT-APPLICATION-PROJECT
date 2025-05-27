@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: #dcd8f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 350px;
+            margin: 500px auto;
+            padding: 20px;
+            background-color: #dcd8f5;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px solid white;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            margin: 10px 0 5px;
+            text-align: center;
+        }
+        input {
+            width: 30%;
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            width: 30%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/signup">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required></br>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>
